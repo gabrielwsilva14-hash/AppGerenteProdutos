@@ -1,8 +1,12 @@
-// Importar os módulos necessários do Firebase
+// Importar módulos do Firebase
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import {
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager,
+} from "firebase/firestore";
 
-// 🔹 Configuração do Firebase
+// 🔹 Configuração do Firebase 
 const firebaseConfig = {
   apiKey: "AIzaSyByvQs8iThKcHZynKMvOo1c0JCLPpJdqFE",
   authDomain: "cadastroprodutos-5888a.firebaseapp.com",
@@ -13,8 +17,12 @@ const firebaseConfig = {
   measurementId: "G-BZK97R4YYT"
 };
 
-// 🔹 Inicializa o app
+// 🔹 Inicializa o app Firebase
 const app = initializeApp(firebaseConfig);
 
-// 🔹 Inicializa o Firestore
-export const db = getFirestore(app);
+// 🔹 Inicializa o Firestore com cache persistente
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({
+    tabManager: persistentMultipleTabManager(), // mantém cache mesmo com várias abas
+  }),
+});
