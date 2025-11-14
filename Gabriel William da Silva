@@ -3,3 +3,4 @@ import { StyleSheet, Text, View, Image } from 'react-nactive';
 export default function App () {
  return (
   <View style={styles.container}>
+    <Text style={{color: "black", fontSize: 25}}>Endereço de e-mail</Text>
