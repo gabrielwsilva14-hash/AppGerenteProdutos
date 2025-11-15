@@ -3,4 +3,18 @@ import { StyleSheet, Text, View, Image } from 'react-nactive';
 export default function App () {
  return (
   <View style={styles.container}>
-    <Text style={{color: "black", fontSize: 25}}>Endereço de e-mail</Text>
+    <Text style={{color: "black", fontSize: 25}}>Endereço de e-mail</TextInput>
+    <Text style={{color: "black", fontSize: 25}}>Senha</SecureTextInput>
+    <Text style={{color: "white", fontSize: 30}}>Entrar</Button>
+    <Text style={{color: "blue", fontSize: 20}}>Cadastrar-se</ListUsers>
+ );
+}
+
+const styles = StyleSheet.create ({
+ container: {
+ flex: 1
+ backgroundColor: '#107'
+ alignItems: 'center',
+ justifyContent: 'center',
+},
+});
